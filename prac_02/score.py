@@ -9,12 +9,12 @@ import random
 def main():
     score = float(input("Enter your score :"))
     result = get_result(score)
-    print(f" User {score} is {result}")
+    print(f"User {score} is {result}")
     if result == "Excellent":
         print("You get a prize!")
     random_score = random.randint(0, 100)
     result = get_result(random_score)
-    print(f"Random:{random_score} = {result}")
+    print(f"Random: {random_score} = {result}")
 
 
 def get_result(score):
@@ -23,7 +23,7 @@ def get_result(score):
     elif score >= 90:
         return "Excellent"
     elif score >= 50:
-        return "passable"
+        return "Passable"
     else:
         return "Bad"
 
