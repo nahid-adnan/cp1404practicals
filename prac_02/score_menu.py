@@ -3,7 +3,7 @@ CP1404/CP5632 - Practical
 Program with a menu for score checking
 """
 
-Menu = """G- get a valid score
+MENU = """G- get a valid score
 P- print result
 S- show stars    
 Q- quit """
@@ -11,7 +11,7 @@ Q- quit """
 
 def main():
     score = get_valid_score()
-    print(Menu)
+    print(MENU)
     choice = input(">>>").upper()
     while choice != "Q":
         if choice == "G":
@@ -22,7 +22,7 @@ def main():
             print(get_stars(score))
         else:
             print("Invalid choice")
-        print(Menu)
+        print(MENU)
         choice = input(">>>").upper()
     print("Thank you ")
 
@@ -45,7 +45,7 @@ def get_result(score):
 
 
 def get_stars(score):
-    stars = "*" * int(score // 10)
+    stars = "*" * int(score)
     return stars
 
 
