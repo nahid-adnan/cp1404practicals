@@ -5,7 +5,7 @@ Program with a menu for score checking
 
 Menu = """G- get a valid score
 P- print result
-S- show stars
+S- show stars    
 Q- quit """
 
 
