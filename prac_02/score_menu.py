@@ -5,36 +5,48 @@ Program with a menu for score checking
 
 Menu = """G- get a valid score
 P- print result
-S- show starsK
+S- show stars
 Q- quit """
 
 
 def main():
+    score = get_valid_score()
     print(Menu)
     choice = input(">>>").upper()
-    score = 0
     while choice != "Q":
         if choice == "G":
-            score = float(input("Enter your score: "))
-            print(score)
+            score = get_valid_score()
         elif choice == "P":
-            if score < 0 or score > 100:
-                print("Invalid score")
-            elif score >= 90:
-                print("Excellent")
-            elif score >= 50:
-                print("passable")
-            else:
-                print("Bad")
+            print(get_result(score))
         elif choice == "S":
-            stars = "*" * int(score // 10)
-            print(stars)
+            print(get_stars(score))
         else:
-            print("Invalid option")
+            print("Invalid choice")
         print(Menu)
-        choice = input(">>> ").upper()
+        choice = input(">>>").upper()
+    print("Thank you ")
 
-    print("Thank you")
+
+def get_valid_score():
+    score = float(input("Enter your score: "))
+    while score < 0 or score > 100:
+        print("Invalid score")
+        score = float(input("Enter your score: "))
+    return score
+
+
+def get_result(score):
+    if score >= 90:
+        return "Excellent"
+    elif score >= 50:
+        return "Passable"
+    else:
+        return "Bad"
+
+
+def get_stars(score):
+    stars = "*" * int(score // 10)
+    return stars
 
 
 main()
