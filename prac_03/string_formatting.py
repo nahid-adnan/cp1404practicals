@@ -9,3 +9,8 @@ guitar_model = "Gibson L-5 CES"
 price = 16036.18
 
 print(f"{year} {guitar_model} for about ${price:,.0f}!")
+
+
+for i in range(0, 11):
+    print(f"2 ^{i:2} is {2 ** i:4}")
+
